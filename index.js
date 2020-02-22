@@ -30,8 +30,6 @@ bot.on('message', message=>{
         case 'info':
             if(args[1] === 'version'){
                 message.channel.sendMessage('timer (me) is at version ' + version);
-            }if(args[1] === 'server'){
-                message.channel.sendMessage('oof me');
             }else{
                 message.channel.sendMessage('dude what kind of info do u want tell me now pls?')
             }
