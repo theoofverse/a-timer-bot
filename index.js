@@ -5,9 +5,9 @@ const PREFIX = '?';
 
 var version = ('V1.01')
 
-const 1 = 'memes1';
-const 2 = 'memes2';
-const 3 = 'memes3';
+const 0 = 'memes1';
+const 1 = 'memes2';
+const 2 = 'memes3';
 var array = ['memes1', 'memes2', 'memes3'];
 
 bot.on('ready', () =>{
