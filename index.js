@@ -29,15 +29,7 @@ bot.on('message', message=>{
             message.channel.sendMessage('WHAT? ~~I THOUGHT WE ALWAYS DID!~~ THAT IS WEIRD!')
             break;
         case 'test':
-            var randomValue = [];
-            for(i = 0; i < 6; i++) {
-            randomValue[i] = Math.floor( Math.random() * 2 );
-            }
-            if(randomValue === 'a'){
-                message.channel.sendMessage('memes?');
-            }else{
-                message.channel.sendMessage('memes!')
-            }
+            message.channel.sendMessage('memes')
         break;
             
         case 'info':
