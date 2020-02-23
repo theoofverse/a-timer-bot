@@ -31,7 +31,7 @@ bot.on('message', message=>{
         case 'test':
             var randomValue = [];
             for(i = 0; i < 6; i++) {
-            randomValue[i] = Math.floor( Math.random() * 60 );
+            randomValue[i] = Math.floor( Math.random() * 2 );
             }
             if(randomValue === 'a'){
                 message.channel.sendMessage('memes?');
