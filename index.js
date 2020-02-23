@@ -5,6 +5,9 @@ const PREFIX = '?';
 
 var version = ('V1.01')
 
+const 1 = 'memes1';
+const 2 = 'memes2';
+const 3 = 'memes3';
 var array = ['memes1', 'memes2', 'memes3'];
 
 bot.on('ready', () =>{
@@ -39,7 +42,7 @@ bot.on('message', message=>{
                 message.channel.sendMessage('timer (me) is at version ' + version);
             }else{
                 if(args[1] === 'server'){
-                    message.channel.sendMessage('memes');
+                    message.channel.sendMessage('this server is a place of freedom and memes where u can go onto the catogorys and do whatever u want in "legal restriction" of course! :)');
                 }else{
                     message.channel.sendMessage('dude what kind of info do u want tell me now pls?')
             }
