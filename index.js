@@ -4,6 +4,7 @@ const bot = new Discord.Client();
 const PREFIX = '?';
 
 var version = ('V1.01')
+var array = ["response1", "response2", "response3"];
 
 bot.on('ready', () =>{
     console.log('this bot is online AND IM GOING TO RAPE U HARDDDDD');
@@ -29,7 +30,7 @@ bot.on('message', message=>{
             message.channel.sendMessage('WHAT? ~~I THOUGHT WE ALWAYS DID!~~ THAT IS WEIRD!')
             break;
         case 'test':
-            message.channel.sendMessage('memes')
+            message.channel.send(Math.Floor(Math.random() * array.length))
         break;
             
         case 'info':
