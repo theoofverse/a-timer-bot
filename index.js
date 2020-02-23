@@ -31,7 +31,7 @@ bot.on('message', message=>{
             message.channel.sendMessage('WHAT? ~~I THOUGHT WE ALWAYS DID!~~ THAT IS WEIRD!')
             break;
         case 'randomNumber':
-            var result = Math.floor((Math.random() * replies.length))
+            var result = Math.floor((Math.random() * array.length))
             message.channel.send(array[result])
         break;
             
