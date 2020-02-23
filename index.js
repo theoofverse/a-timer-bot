@@ -5,10 +5,7 @@ const PREFIX = '?';
 
 var version = ('V1.01')
 
-const response1 = 'memes1';
-const response2 = 'memes2';
-const response3 = 'memes3';
-var array = [response1, response2, response3];
+var array = ['memes1', 'memes2', 'memes3'];
 
 bot.on('ready', () =>{
     console.log('this bot is online AND IM GOING TO RAPE U HARDDDDD');
