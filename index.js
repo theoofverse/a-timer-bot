@@ -3,9 +3,11 @@ const bot = new Discord.Client();
 
 const PREFIX = '?';
 
-var version = ('V1.01')
+var version = ('V1.10')
 
 var array1 = ['i like raping little kids! :)', 'i work all day keeping myself online, boring life', 'MASTURBATING BOI!!! ;D'];
+var array2 = ["lol no do ur own dirty work u bi-", "i can't u dumb dumb", 'i hate helping people screw u!'];
+var array3 = ['WHAT? ~~I THOUGHT WE ALWAYS DID!~~ THAT IS WEIRD!', 'ok actually what the hell that is weird dude!', 'OH YES BOI ;)'];
 
 bot.on('ready', () =>{
     console.log('this bot is online AND IM GOING TO RAPE U HARDDDDD');
@@ -23,13 +25,15 @@ bot.on('message', message=>{
             message.channel.send(array1[result1])
             break;
         case 'do-my-homework':
-            message.channel.sendMessage('lol no do your own dirty work bi-')
+            var result2 = Math.floor((Math.random() * array2.length))
+            message.channel.send(array2[result2])
             break;
         case 'tell-me-about-u':
-            message.channel.sendMessage('im Timer! a bot that @theoofverse coded in visual studio and discord.js which is cool. i can do alot of different things but remember im still in my infency!')
+            message.channel.sendMessage('im Timer! a bot that theoofverse coded in visual studio and discord.js which is cool. i can do alot of different things but remember im still in my infency!')
             break;
         case 'pls-sleep-with-me!':
-            message.channel.sendMessage('WHAT? ~~I THOUGHT WE ALWAYS DID!~~ THAT IS WEIRD!')
+            var result3 = Math.floor((Math.random() * array3.length))
+            message.channel.send(array3[result3])
             break;
             
         case 'info':
