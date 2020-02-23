@@ -11,7 +11,7 @@ var array3 = ['WHAT? ~~I THOUGHT WE ALWAYS DID!~~ THAT IS WEIRD!', 'ok actually 
 
 bot.on('ready', () =>{
     console.log('this bot is online AND IM GOING TO RAPE U HARDDDDD');
-    bot.user.setActivity('people neck-rope', { type: 'WATCHING'}).catch(console.error);
+    bot.user.setActivity('cornhub lol', { type: 'WATCHING'}).catch(console.error);
 })
 
 bot.on('message', message=>{
