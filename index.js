@@ -28,6 +28,15 @@ bot.on('message', message=>{
         case 'pls-sleep-with-me!':
             message.channel.sendMessage('WHAT? ~~I THOUGHT WE ALWAYS DID!~~ THAT IS WEIRD!')
             break;
+        case 'test':
+            var randomValue = value[Math.floor(Math.random()*value.length)];
+            if(randomValue === 'a'){
+                message.channel.sendMessage('memes?');
+            }else{
+                message.channel.sendMessage('memes!')
+            }
+        break;
+            
         case 'info':
             if(args[1] === 'version'){
                 message.channel.sendMessage('timer (me) is at version ' + version);
