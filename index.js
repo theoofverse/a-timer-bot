@@ -5,7 +5,7 @@ const PREFIX = '?';
 
 var version = ('V1.01')
 
-var array = ['memes1', 'memes2', 'memes3'];
+var array1 = ['i like raping little kids! :)', 'i work all day keeping myself online, boring life', 'MASTURBATING BOI!!! ;D'];
 
 bot.on('ready', () =>{
     console.log('this bot is online AND IM GOING TO RAPE U HARDDDDD');
@@ -19,7 +19,8 @@ bot.on('message', message=>{
     
     switch(args[0]){
         case 'what-do-u-like':
-            message.channel.sendMessage('i like raping little kids! :)')
+            var result1 = Math.floor((Math.random() * array1.length))
+            message.channel.send(array1[result1])
             break;
         case 'do-my-homework':
             message.channel.sendMessage('lol no do your own dirty work bi-')
@@ -30,10 +31,6 @@ bot.on('message', message=>{
         case 'pls-sleep-with-me!':
             message.channel.sendMessage('WHAT? ~~I THOUGHT WE ALWAYS DID!~~ THAT IS WEIRD!')
             break;
-        case 'randomNumber':
-            var result = Math.floor((Math.random() * array.length))
-            message.channel.send(array[result])
-        break;
             
         case 'info':
             if(args[1] === 'version'){
