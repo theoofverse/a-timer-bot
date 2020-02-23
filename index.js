@@ -5,9 +5,6 @@ const PREFIX = '?';
 
 var version = ('V1.01')
 
-const 0 = 'memes1';
-const 1 = 'memes2';
-const 2 = 'memes3';
 var array = ['memes1', 'memes2', 'memes3'];
 
 bot.on('ready', () =>{
@@ -33,7 +30,7 @@ bot.on('message', message=>{
         case 'pls-sleep-with-me!':
             message.channel.sendMessage('WHAT? ~~I THOUGHT WE ALWAYS DID!~~ THAT IS WEIRD!')
             break;
-        case 'test':
+        case 'randomNumber':
             message.channel.send(Math.floor(Math.random() * array.length))
         break;
             
