@@ -45,7 +45,10 @@ bot.on('message', message=>{
             .setColor(0x27DDEF)
             message.channel.sendEmbed(embed);
         break;
-        
+            
+        case 'you-should-be-in-prison':
+            message.author.send('*how the hell did u know thats a secret dont say that again!!!*')
+            break;   
     }
 })
 
