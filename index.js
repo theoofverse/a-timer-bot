@@ -38,8 +38,13 @@ bot.on('message', message=>{
             if(args[1] === 'version'){
                 message.channel.sendMessage('timer (me) is at version ' + version);
             }else{
-                message.channel.sendMessage('dude what kind of info do u want tell me now pls?')
+                if(args[1] === 'server'){
+                    message.channel.sendMessage('memes');
+                }else{
+                    message.channel.sendMessage('dude what kind of info do u want tell me now pls?')
             }
+            }
+            
         break;
 
         case 'lets-meme':
