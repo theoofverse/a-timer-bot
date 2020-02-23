@@ -30,7 +30,7 @@ bot.on('message', message=>{
             message.channel.sendMessage('WHAT? ~~I THOUGHT WE ALWAYS DID!~~ THAT IS WEIRD!')
             break;
         case 'test':
-            message.channel.send(Math.Floor(Math.random() * array.length))
+            message.channel.sendMessage(Math.Floor(Math.random() * array.length))
         break;
             
         case 'info':
