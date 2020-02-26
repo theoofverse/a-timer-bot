@@ -8,6 +8,7 @@ var version = ('V1.10')
 var array1 = ['i like raping little kids! :)', 'i work all day keeping myself online, boring life', 'MASTURBATING BOI!!! ;D'];
 var array2 = ["lol no do ur own dirty work u bi-", "i can't u dumb dumb", 'i hate helping people screw u!'];
 var array3 = ['WHAT? ~~I THOUGHT WE ALWAYS DID!~~ THAT IS WEIRD!', 'ok actually what the hell that is weird dude!', 'OH YES BOI ;)'];
+var array4 = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', ];
 
 bot.on('ready', () =>{
     console.log('this bot is online AND IM GOING TO RAPE U HARDDDDD');
