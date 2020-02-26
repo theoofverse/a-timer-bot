@@ -38,6 +38,10 @@ bot.on('message', message=>{
         case 'rule-34':
             message.channel.sendMessage('very horny ;) http://bit.ly/2HPQ1JW')
             break;
+        case 'spin-the-mis':
+            var result4 = Math.floor((Math.random() * array4.length))
+            message.channel.send(array4[result4])
+            break;
             
         case 'info':
             if(args[1] === 'version'){
