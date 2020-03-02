@@ -12,7 +12,7 @@ var array4 = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13
 
 bot.on('ready', () =>{
     console.log('this bot is online AND IM GOING TO RAPE U HARDDDDD');
-    bot.user.setActivity('cornhub lol', { type: 'WATCHING'}).catch(console.error);
+    bot.user.setActivity('pornhub', { type: 'WATCHING'}).catch(console.error);
 })
 
 bot.on('message', message=>{
