@@ -99,6 +99,49 @@ bot.on('message', message=>{
             var result6 = Math.floor((Math.random() * array6.length))
             message.channel.send(array6[result6])
         break;   
+		
+		// USER COMMANDS
+		case 'stab':
+            if(!message.member.roles.find(r => r.name === "mod")) return message.channel.sendMessage('you are not a mod lol')
+
+            const user = message.mentions.users.first();
+
+            if(user){
+                const member = message.guild.member(user);
+
+                if(member){
+                    member.kick('you have been stabbed my child!').then(() =>{
+                        message.channel.sendMessage(`i have now stabbed ${user.tag}`)
+                    }).catch(err =>{
+                        message.reply("the knife is gone! i can't stab him!")
+                        console.log(err);
+                    });
+                } else{
+                    message.reply("who? i dont see them")
+                }
+            }else {
+                message.reply("where")
+            }
+        break; 
+        case 'kill':
+            if(!message.member.roles.find(r => r.name === "mod")) return message.channel.sendMessage('you are not a mod lol')
+
+            const user2 = message.mentions.users.first();
+
+            if(user2){
+				const member2 = message.guild.member(user2);
+				
+                if(member2){
+                    member2.ban({ression: 'you are worse then satan'}).then(() =>{
+                        message.channel.sendMessage(`${user2.tag} has been killed lol`)
+                    })
+                } else{
+                    message.reply("who? i dont see them")
+                }
+            }else {
+                message.reply("where")
+            }
+        break; 
     }
 })
 
