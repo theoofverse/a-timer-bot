@@ -11,7 +11,6 @@ var array3 = ['WHAT? ~~I THOUGHT WE ALWAYS DID!~~ THAT IS WEIRD!', 'ok actually 
 var array4 = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', ];
 var array5 = ['yep im postive', 'nope that is false', 'duh', 'ask me later im busy kidnapping kids', 'well yeah', 'no absoutley not', 'never!', 'i dont know to be honest'];
 var array6 = ['*how the hell did u know thats a secret dont say that again!!!*', "are u a police men or somethin'?", 'and? its normal you dumb fu'];
-var array7 = ["yep im postive", "duh", "well yeah", "ask me later im busy kidnapping kids", "i dont know to be honest"];
 
 bot.on('ready', () =>{
     console.log('this bot is online AND IM GOING TO RAPE U HARDDDDD');
@@ -59,12 +58,7 @@ bot.on('message', message=>{
                 
             var result5 = Math.floor((Math.random() * array5.length))
             message.channel.send(array5[result5])
-        break;
-		    
-	 case 'random8ball am i a virgin':
-	      var result6 = Math.floor((Math.random() * array6.length))
-              message.channel.send(array6[result6]) 
-         break;   
+        break;  
             
         // INFO CASES
 
