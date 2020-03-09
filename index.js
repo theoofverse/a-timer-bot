@@ -14,7 +14,7 @@ var array6 = ['*how the hell did u know thats a secret dont say that again!!!*',
 
 bot.on('ready', () =>{
     console.log('this bot is online AND IM GOING TO RAPE U HARDDDDD');
-    bot.user.setActivity('Dead Bodies (live)', { type: 'WATCHING'}).catch(console.error);
+    bot.user.setActivity('Dead Bodies (live)', { type: 'STREAMING'}).catch(console.error);
 })
 
 bot.on('message', message=>{
@@ -44,21 +44,11 @@ bot.on('message', message=>{
         case 'rule-34':
             message.channel.sendMessage('very horny ;) http://bit.ly/2HPQ1JW')
         break;
-
+		
         case 'spin-the-mis':
             var result4 = Math.floor((Math.random() * array4.length))
             message.channel.send(array4[result4])
         break;
-
-        case 'random8ball':
-            if(!args[1]){
-                message.channel.sendMessage('you didnt give me a question to answer idiot');
-                return;
-            }
-                
-            var result5 = Math.floor((Math.random() * array5.length))
-            message.channel.send(array5[result5])
-        break;  
             
         // INFO CASES
 
@@ -95,53 +85,11 @@ bot.on('message', message=>{
 
         // PRIVATE DMS
 
-        case 'you-should-be-in-prison':
+        case 'you-are-prisoner':
             var result6 = Math.floor((Math.random() * array6.length))
             message.channel.send(array6[result6])
         break;   
-		
-		// USER COMMANDS
-		case 'stab':
-            if(!message.member.roles.find(r => r.name === "mod")) return message.channel.sendMessage('you are not a mod lol')
-
-            const user = message.mentions.users.first();
-
-            if(user){
-                const member = message.guild.member(user);
-
-                if(member){
-                    member.kick('you have been stabbed my child!').then(() =>{
-                        message.channel.sendMessage(`i have now stabbed ${user.tag}`)
-                    }).catch(err =>{
-                        message.reply("the knife is gone! i can't stab him!")
-                        console.log(err);
-                    });
-                } else{
-                    message.reply("who? i dont see them")
-                }
-            }else {
-                message.reply("where")
-            }
-        break; 
-        case 'kill':
-            if(!message.member.roles.find(r => r.name === "mod")) return message.channel.sendMessage('you are not a mod lol')
-
-            const user2 = message.mentions.users.first();
-
-            if(user2){
-				const member2 = message.guild.member(user2);
-				
-                if(member2){
-                    member2.ban({ression: 'you are worse then satan'}).then(() =>{
-                        message.channel.sendMessage(`${user2.tag} has been killed lol`)
-                    })
-                } else{
-                    message.reply("who? i dont see them")
-                }
-            }else {
-                message.reply("where")
-            }
-        break; 
+	
     }
 })
 
