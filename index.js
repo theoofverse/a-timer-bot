@@ -14,7 +14,7 @@ var array6 = ['*how the hell did u know thats a secret dont say that again!!!*',
 
 bot.on('ready', () =>{
     console.log('this bot is online AND IM GOING TO RAPE U HARDDDDD');
-    bot.user.setActivity('Dead Bodies (live)', { type: 'STREAMING'}).catch(console.error);
+    bot.user.setActivity('!allcommands', { type: 'PLAYING'}).catch(console.error);
 })
 
 bot.on('message', message=>{
