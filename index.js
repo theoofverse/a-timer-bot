@@ -3,18 +3,18 @@ const bot = new Discord.Client();
 
 const PREFIX = '?';
 
-var version = ('V1.35')
+var version = ('V1.40')
 
 var array1 = ['i like raping little kids! :)', 'i work all day keeping myself online, boring life', 'MASTURBATING BOI!!! ;D'];
 var array2 = ["lol no do ur own dirty work u bi-", "i can't u dumb dumb", 'i hate helping people screw u!'];
-var array3 = ['WHAT? ~~I THOUGHT WE ALWAYS DID!~~ THAT IS WEIRD!', 'ok actually what the hell that is weird dude!', 'OH YES BOI ;)'];
+var array3 = ['im pretty good at that', 'jeez i succ at that', 'i beat that like i beat my mom', 'fricc you i no good'];
 var array4 = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', ];
 var array5 = ['yep im postive', 'nope that is false', 'duh', 'well yeah', 'no absoutley not', 'never!', 'of course!', 'what the hell never?'];
 var array6 = ['*how the hell did u know thats a secret dont say that again!!!*', "are u a police men or somethin'?", 'and? its normal you dumb fu'];
 
 bot.on('ready', () =>{
     console.log('this bot is online AND IM GOING TO RAPE U HARDDDDD');
-    bot.user.setActivity('!allcommands', { type: 'PLAYING'}).catch(console.error);
+    bot.user.setActivity('?commands', { type: 'PLAYING'}).catch(console.error);
 })
 
 bot.on('message', message=>{
@@ -26,7 +26,7 @@ bot.on('message', message=>{
 
         // NORMAL COMMANDS
 
-        case 'what-do-u-like':
+        case 'what-u-like':
             var result1 = Math.floor((Math.random() * array1.length))
             message.channel.send(array1[result1])
         break;
@@ -36,7 +36,11 @@ bot.on('message', message=>{
             message.channel.send(array2[result2])
         break;
 
-        case 'pls-sleep-with-me!':
+        case 'goodat':
+            if (!args[1]){
+                message.channel.sendMessage('good at what? oxygen?')
+                return;
+            }
             var result3 = Math.floor((Math.random() * array3.length))
             message.channel.send(array3[result3])
         break;
@@ -49,7 +53,7 @@ bot.on('message', message=>{
             var result4 = Math.floor((Math.random() * array4.length))
             message.channel.send(array4[result4])
         break;
-		    
+            
         // INFO CASES
 
         case 'info':
@@ -59,11 +63,11 @@ bot.on('message', message=>{
                 if(args[1] === 'server'){
                     message.channel.sendMessage('this server is a place of freedom and memes where u can go onto the catogorys and do whatever u want in "legal restriction" of course! :)');
                 }else{
-                    if(args[1] === 'bot'){
+                    if(args[1] === 'timer'){
                         message.channel.sendMessage('im Timer! a bot that theoofverse coded in visual studio and discord.js which is cool. i can do alot of different things kinda useless but idc i will murder & rape you! :))))');
                     }else{
                         if(args[1] === 'kids'){
-                            const embed2 = new Discord.RichEmbed()
+                            const embed = new Discord.RichEmbed()
                            .setTitle("Kids I've slaughturd & raped")
                            .addField('John Micheal', 'loser')
                            .addField('Samantha Brandon', 'nerd')
@@ -74,7 +78,7 @@ bot.on('message', message=>{
                            .addField('Kevin Brown', 'THAT SON OF A BI-')
                            .addField(message.author.username, 'you are next')
                            .setColor(10038562)					   
-                           message.channel.sendEmbed(embed2);
+                           message.channel.sendEmbed(embed);
                         }else{
                             message.channel.sendMessage('dude what kind of info do u want tell me now pls?')
               }
@@ -85,54 +89,31 @@ bot.on('message', message=>{
 
         // PRIVATE DMS
 
-        case 'you-are-prisoner':
+        case 'prisoner':
             var result6 = Math.floor((Math.random() * array6.length))
             message.channel.send(array6[result6])
         break;   
 
-        // PERSONAL COMMANDS:
-
-        case 'kick':
-            if(!message.member.roles.find(r => r.name === "Mods")) return message.channel.sendMessage('you are not a mod lol')
-
-            const user = message.mentions.users.first();
-
-            if(user){
-                const member = message.guild.member(user);
-
-                if(member){
-                    member.kick('you have been stabbed my child!').then(() =>{
-                        message.channel.sendMessage(`i have now stabbed ${user.tag}`)
-                    }).catch(err =>{
-                        message.reply("the knife is gone! i can't stab him!")
-                        console.log(err);
-                    });
-                } else{
-                    message.reply("who? i dont see them")
-                }
-            }else {
-                message.reply("where")
-            }
-        break; 
-        case 'ban':
-            if(!message.member.roles.find(r => r.name === "Mods")) return message.channel.sendMessage('you are not a mod lol')
-
-            const user2 = message.mentions.users.first();
-
-            if(user2){
-				const member2 = message.guild.member(user2);
-				
-                if(member2){
-                    member2.ban({ression: 'you are worse then satan'}).then(() =>{
-                        message.channel.sendMessage(`${user2.tag} has been killed lol`)
-                    })
-                } else{
-                    message.reply("who? i dont see them")
-                }
-            }else {
-                message.reply("where")
-            }
-        break; 
+        case 'commands':
+            const embed = new Discord.RichEmbed()
+            .setTitle('Timer Commands')
+            .addField('Prefix is ?')
+            .addField('?what-u-like', 'ask me what i like')
+            .addField('?do-my-homework', '(try) and make me do my homework')
+            .addField('?goodat [something]', 'ask what im good at')
+            .addField('?rule-34', ';)')
+            .addField('?prisoner', 'call me out (please dont)')
+            .addTitle('Info Commands')
+            .addField('?info goes before all this:')
+            .addField('server', 'ask info bout the server')
+            .addField('version', 'ask info bout the version')
+            .addField('timer', 'ask even more info bout me')
+            .addField('kids', 'time to call good old cops')
+            .setColor(0xFE642E)
+            .setThumbnail(message.author.avatarURL);
+            message.channel.send(embed);
+        break;
+	
     }
 })
 
