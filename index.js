@@ -56,25 +56,6 @@ bot.on('message', message=>{
             message.channel.send(array4[result4])
         break;
 	
-	case 'commands':
-            const embed = new Discord.RichEmbed()
-            .setTitle('Timer Commands')
-            .addField('whatYaLike', 'putting `?whatYaLike` will generate a random answer from Timer saying what he likes')
-            .addField('goodAt', 'putting `?goodAt` will do nothing cuz you need to add a question E.G: `?goodAt masturbation`')
-            .addField('doMyHomework', 'putting `?doMyHomework` will generate a random answer from Timer listing why he wont do your homework')
-            .addField('rule34', 'putting `?rule34` will... dear god no!')
-            .addField('prisoner', 'putting `?prisoner` will make Timer DM you with a *private message*')
-            .addField('~~~~~~~~~~~~', '**INFO GRAPHICS CARD**')
-            .addField('remember:', 'put `?info` before these commands')
-            .addField('version', 'tells the version of the bot')
-            .addField('bot', 'get info about the bot')
-            .addField('server', 'get info about the original server time was made in!')
-            .addField('kids', 'ask info about all the kids hes... is this sfw?')
-            .setFooter('remember the prefix for a command is ?')
-            .setColor(0xFE642E);
-            message.channel.send(embed);
-        break;	    
-            
         // INFO CASES
 
         case 'info':
@@ -114,6 +95,26 @@ bot.on('message', message=>{
             var result6 = Math.floor((Math.random() * array6.length))
             message.channel.send(array6[result6])
         break;   
+
+	case 'commands':
+            message.channel.sendMessage('this will suite your needs i think:');
+            const embed = new Discord.RichEmbed()
+            .setTitle('Timer Commands')
+            .addField('whatYaLike', 'putting `?whatYaLike` will generate a random answer from Timer saying what he likes')
+            .addField('goodAt', 'putting `?goodAt` will do nothing cuz you need to add a question E.G: `?goodAt masturbation`')
+            .addField('doMyHomework', 'putting `?doMyHomework` will generate a random answer from Timer listing why he wont do your homework')
+            .addField('rule34', 'putting `?rule34` will... dear god no!')
+            .addField('prisoner', 'putting `?prisoner` will make Timer DM you with a *private message*')
+            .addField('~~~~~~~~~~~~', '**INFO GRAPHICS CARD**')
+            .addField('remember:', 'put `?info` before these commands')
+            .addField('version', 'tells the version of the bot')
+            .addField('bot', 'get info about the bot')
+            .addField('server', 'get info about the original server time was made in!')
+            .addField('kids', 'ask info about all the kids hes... is this sfw?')
+            .setFooter('remember the prefix for a command is ?')
+            .setColor(0xFE642E);
+            message.channel.send(embed);
+        break;		    
     }
 })
 
