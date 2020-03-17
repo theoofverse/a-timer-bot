@@ -93,7 +93,7 @@ bot.on('message', message=>{
 
         case 'prisoner':
             var result6 = Math.floor((Math.random() * array6.length))
-            message.channel.send(array6[result6])
+            message.author.send(array6[result6])
         break;   
 
 	case 'commands':
