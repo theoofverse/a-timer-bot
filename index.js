@@ -16,11 +16,6 @@ bot.on('ready', () =>{
     console.log('this bot is online AND IM GOING TO RAPE U HARDDDDD');
     bot.user.setActivity('?commands', { type: 'PLAYING'}).catch(console.error);
 })
-bon.on('guildMemberAdd', member =>{
-	const thisChannel = member.guild.channels.find(channel => channel.name === "welcoming-children");
-	if(!channel) return;
-	channel.send(`{$member} has joined the server! http://bit.ly/331NGoZ`)
-})
 
 bot.on('message', message=>{
     
