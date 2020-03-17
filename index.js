@@ -49,23 +49,7 @@ bot.on('message', message=>{
             var result4 = Math.floor((Math.random() * array4.length))
             message.channel.send(array4[result4])
         break;
-            
-        case '8ball':
-            if(!args[1]){
-                message.channel.sendMessage('you didnt give me a question to answer nooba');
-                return;
-            }
-            var result5 = Math.floor((Math.random() * array5.length))
-
-            const embed1 = new Discord.RichEmbed()
-            .setTitle('8ball bois')
-            .setField(message.author.username)
-            .setField('A) ' + array5[result5])
-            .setColor(2123412)	
-            MessageChannel.channel.sendEmbed(embed1)
-        break;
-
-            
+		    
         // INFO CASES
 
         case 'info':
