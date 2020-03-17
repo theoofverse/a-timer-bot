@@ -61,7 +61,7 @@ bot.on('message', message=>{
             .addField('?do-my-homework', '(try) and make me do my homework')
             .addField('?goodat [something]', 'ask what im good at')
             .addField('?rule-34', ';)')
-            .addField('?prisoner', 'call me out (please dont)')
+            .addField('?prisoner', 'call me out (please dont)' true)
             .addField('------------', 'INFO COMMANDS')
 	    .addField('?info goes before these ', ' ------------')
             .addField('server', 'ask info bout the server')
@@ -69,7 +69,7 @@ bot.on('message', message=>{
             .addField('bot', 'ask even more info bout me')
             .addField('kids', 'time to call good old cops')
             .setColor(0xFE642E)
-            .setThumbnail(message.author.avatarURL); 
+            .setThumbnail(message.author.avatarURL true); 
             message.channel.send(embed);
         break;	    
             
