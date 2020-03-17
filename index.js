@@ -58,7 +58,7 @@ bot.on('message', message=>{
             var result5 = Math.floor((Math.random() * array5.length))
 
             const embed1 = new Discord.RichEmbed()
-            .setTitle('8ball (8)')
+            .setTitle('8ball bois')
             .setField(message.author.username)
             .setField('Q) ' + args[1])
             .setField('A) ' + array5[result5])
@@ -76,7 +76,7 @@ bot.on('message', message=>{
                 if(args[1] === 'server'){
                     message.channel.sendMessage('this server is a place of freedom and memes where u can go onto the catogorys and do whatever u want in "legal restriction" of course! :)');
                 }else{
-                    if(args[1] === 'timer'){
+                    if(args[1] === 'bot'){
                         message.channel.sendMessage('im Timer! a bot that theoofverse coded in visual studio and discord.js which is cool. i can do alot of different things kinda useless but idc i will murder & rape you! :))))');
                     }else{
                         if(args[1] === 'kids'){
