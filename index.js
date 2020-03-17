@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 
 const PREFIX = '?';
 
-var version = ('V1.40')
+var version = ('V1.41')
 
 var array1 = ['i like raping little kids! :)', 'i work all day keeping myself online, boring life', 'MASTURBATING BOI!!! ;D'];
 var array2 = ["lol no do ur own dirty work u bi-", "i can't u dumb dumb", 'i hate helping people screw u!'];
@@ -15,6 +15,11 @@ var array6 = ['*how the hell did u know thats a secret dont say that again!!!*',
 bot.on('ready', () =>{
     console.log('this bot is online AND IM GOING TO RAPE U HARDDDDD');
     bot.user.setActivity('?commands', { type: 'PLAYING'}).catch(console.error);
+})
+bon.on('guildMemberAdd', member =>{
+	const thisChannel = member.guild.channels.find(channel => channel.name === "welcoming-children");
+	if(!channel) return;
+	channel.send(`{$member} has joined the server! http://bit.ly/331NGoZ`)
 })
 
 bot.on('message', message=>{
@@ -63,7 +68,7 @@ bot.on('message', message=>{
                 if(args[1] === 'server'){
                     message.channel.sendMessage('this server is a place of freedom and memes where u can go onto the catogorys and do whatever u want in "legal restriction" of course! :)');
                 }else{
-                    if(args[1] === 'timer'){
+                    if(args[1] === 'bot'){
                         message.channel.sendMessage('im Timer! a bot that theoofverse coded in visual studio and discord.js which is cool. i can do alot of different things kinda useless but idc i will murder & rape you! :))))');
                     }else{
                         if(args[1] === 'kids'){
@@ -103,14 +108,14 @@ bot.on('message', message=>{
             .addField('?goodat [something]', 'ask what im good at')
             .addField('?rule-34', ';)')
             .addField('?prisoner', 'call me out (please dont)')
-            .addTitle('Info Commands')
+            .setTitle('Info Commands')
             .addField('?info goes before all this:')
             .addField('server', 'ask info bout the server')
             .addField('version', 'ask info bout the version')
-            .addField('timer', 'ask even more info bout me')
+            .addField('bot', 'ask even more info bout me')
             .addField('kids', 'time to call good old cops')
             .setColor(0xFE642E)
-            .setThumbnail(message.author.avatarURL);
+            .setThumbnail(message.author.avatarURL); 
             message.channel.send(embed);
         break;
 	
