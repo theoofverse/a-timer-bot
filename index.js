@@ -1,6 +1,8 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client();
 
+var MESSAGE = 'GOD YES';
+
 const PREFIX = '?';
 
 var version = ('V1.42')
