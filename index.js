@@ -61,7 +61,7 @@ bot.on('message', message=>{
             .setTitle('8ball (8)')
             .setField(message.author.username)
             .setField('Q) ' + args[1])
-            .setField('A) ' + result5)
+            .setField('A) ' + array5[result5])
             .setColor(2123412)	
             MessageChannel.channel.sendEmbed(embed1)
         break;
