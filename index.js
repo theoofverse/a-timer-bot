@@ -57,13 +57,13 @@ bot.on('message', message=>{
             }
             var result5 = Math.floor((Math.random() * array5.length))
 
-            const embed = new Discord.RichEmbed()
+            const embed1 = new Discord.RichEmbed()
             .setTitle('8ball (8)')
             .setField(message.author.username)
             .setField('Q) ' + args[1])
             .setField('A) ' + result5)
             .setColor(2123412)	
-            MessageChannel.channel.sendEmbed(embed)
+            MessageChannel.channel.sendEmbed(embed1)
         break;
 
             
@@ -80,7 +80,7 @@ bot.on('message', message=>{
                         message.channel.sendMessage('im Timer! a bot that theoofverse coded in visual studio and discord.js which is cool. i can do alot of different things kinda useless but idc i will murder & rape you! :))))');
                     }else{
                         if(args[1] === 'kids'){
-                            const embed = new Discord.RichEmbed()
+                            const embed2 = new Discord.RichEmbed()
                            .setTitle("Kids I've slaughturd & raped")
                            .addField('John Micheal', 'loser')
                            .addField('Samantha Brandon', 'nerd')
@@ -91,7 +91,7 @@ bot.on('message', message=>{
                            .addField('Kevin Brown', 'THAT SON OF A BI-')
                            .addField(message.author.username, 'you are next')
                            .setColor(10038562)					   
-                           message.channel.sendEmbed(embed);
+                           message.channel.sendEmbed(embed2);
                         }else{
                             message.channel.sendMessage('dude what kind of info do u want tell me now pls?')
               }
