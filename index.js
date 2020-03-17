@@ -60,7 +60,7 @@ bot.on('message', message=>{
             .addField('?what-u-like', 'ask me what i like', true)
             .addField('?do-my-homework', '(try) and make me do my homework', true)
             .addField('?goodat [something]', 'ask what im good at', true)
-            .addField('?rule-34', ';)', true)
+            .addField('?rule-34', 'GIMME THAT T/S POR-', true)
             .addField('?prisoner', 'call me out (please dont)', true)
             .addField('------------', 'INFO COMMANDS')
 	    .addField('?info goes before these ', ' ------------')
