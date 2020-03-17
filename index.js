@@ -97,7 +97,7 @@ bot.on('message', message=>{
         break;   
 
 	case 'commands':
-            message.channel.sendMessage('this will suite your needs i think:');
+            message.author.send('this will suite your needs i think:');
             const embed = new Discord.RichEmbed()
             .setTitle('Timer Commands')
             .addField('whatYaLike', 'putting `?whatYaLike` will generate a random answer from Timer saying what he likes')
@@ -113,7 +113,7 @@ bot.on('message', message=>{
             .addField('kids', 'ask info about all the kids hes... is this sfw?')
             .setFooter('remember the prefix for a command is ?')
             .setColor(0xFE642E);
-            message.channel.send(embed);
+            message.author.send(embed);
         break;		    
     }
 })
