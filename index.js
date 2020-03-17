@@ -57,19 +57,18 @@ bot.on('message', message=>{
 	case 'commands':
             const embed = new Discord.RichEmbed()
             .setTitle('Timer Commands')
-            .addField('?what-u-like', 'ask me what i like')
-            .addField('?do-my-homework', '(try) and make me do my homework')
-            .addField('?goodat [something]', 'ask what im good at')
-            .addField('?rule-34', ';)')
-            .addField('?prisoner', 'call me out (please dont)' true)
-            .addField('------------', 'INFO COMMANDS')
+            .addField('?what-u-like', 'ask me what i like', true)
+            .addField('?do-my-homework', '(try) and make me do my homework', true)
+            .addField('?goodat [something]', 'ask what im good at', true)
+            .addField('?rule-34', ';)', true)
+            .addField('?prisoner', 'call me out (please dont)', true)
+            .addField('------------', 'INFO COMMANDS', true)
 	    .addField('?info goes before these ', ' ------------')
-            .addField('server', 'ask info bout the server')
-            .addField('version', 'ask info bout the version')
-            .addField('bot', 'ask even more info bout me')
-            .addField('kids', 'time to call good old cops')
+            .addField('server', 'ask info bout the server', true)
+            .addField('version', 'ask info bout the version', true)
+            .addField('bot', 'ask even more info bout me', true)
+            .addField('kids', 'time to call good old cops', true)
             .setColor(0xFE642E)
-            .setThumbnail(message.author.avatarURL true); 
             message.channel.send(embed);
         break;	    
             
