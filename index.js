@@ -62,7 +62,7 @@ bot.on('message', message=>{
             .addField('?goodat [something]', 'ask what im good at', true)
             .addField('?rule-34', ';)', true)
             .addField('?prisoner', 'call me out (please dont)', true)
-            .addField('------------', 'INFO COMMANDS', true)
+            .addField('------------', 'INFO COMMANDS')
 	    .addField('?info goes before these ', ' ------------')
             .addField('server', 'ask info bout the server', true)
             .addField('version', 'ask info bout the version', true)
