@@ -58,6 +58,26 @@ bot.on('message', message=>{
             var result4 = Math.floor((Math.random() * array4.length))
             message.channel.send(array4[result4])
         break;
+	
+	case 'commands':
+            const embed = new Discord.RichEmbed()
+            .setTitle('Timer Commands')
+            .addField('Prefix is ?')
+            .addField('?what-u-like', 'ask me what i like')
+            .addField('?do-my-homework', '(try) and make me do my homework')
+            .addField('?goodat [something]', 'ask what im good at')
+            .addField('?rule-34', ';)')
+            .addField('?prisoner', 'call me out (please dont)')
+            .setTitle('Info Commands')
+            .addField('?info goes before all this:')
+            .addField('server', 'ask info bout the server')
+            .addField('version', 'ask info bout the version')
+            .addField('bot', 'ask even more info bout me')
+            .addField('kids', 'time to call good old cops')
+            .setColor(0xFE642E)
+            .setThumbnail(message.author.avatarURL); 
+            message.channel.send(embed);
+        break;	    
             
         // INFO CASES
 
@@ -98,27 +118,6 @@ bot.on('message', message=>{
             var result6 = Math.floor((Math.random() * array6.length))
             message.channel.send(array6[result6])
         break;   
-
-        case 'commands':
-            const embed = new Discord.RichEmbed()
-            .setTitle('Timer Commands')
-            .addField('Prefix is ?')
-            .addField('?what-u-like', 'ask me what i like')
-            .addField('?do-my-homework', '(try) and make me do my homework')
-            .addField('?goodat [something]', 'ask what im good at')
-            .addField('?rule-34', ';)')
-            .addField('?prisoner', 'call me out (please dont)')
-            .setTitle('Info Commands')
-            .addField('?info goes before all this:')
-            .addField('server', 'ask info bout the server')
-            .addField('version', 'ask info bout the version')
-            .addField('bot', 'ask even more info bout me')
-            .addField('kids', 'time to call good old cops')
-            .setColor(0xFE642E)
-            .setThumbnail(message.author.avatarURL); 
-            message.channel.send(embed);
-        break;
-	
     }
 })
 
