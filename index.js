@@ -60,7 +60,6 @@ bot.on('message', message=>{
             const embed1 = new Discord.RichEmbed()
             .setTitle('8ball bois')
             .setField(message.author.username)
-            .setField('Q) ' + args[1])
             .setField('A) ' + array5[result5])
             .setColor(2123412)	
             MessageChannel.channel.sendEmbed(embed1)
