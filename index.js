@@ -64,7 +64,7 @@ bot.on('message', message=>{
             .addField('doMyHomework', 'putting `?doMyHomework` will generate a random answer from Timer listing why he wont do your homework')
             .addField('rule34', 'putting `?rule34` will... dear god no!')
             .addField('prisoner', 'putting `?prisoner` will make Timer DM you with a **private message**')
-            .addField('------------', '**INFO GRAPHICS CARD**')
+            .addField('------------', '--INFO GRAPHICS CARD--')
             .addField('remember:', 'put `?info` before these commands')
             .addField('version', 'tells the version of the bot')
             .addField('bot', 'get info about the bot')
