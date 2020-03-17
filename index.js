@@ -3,13 +3,13 @@ const bot = new Discord.Client();
 
 const PREFIX = '?';
 
-var version = ('V1.20')
+var version = ('V1.35')
 
 var array1 = ['i like raping little kids! :)', 'i work all day keeping myself online, boring life', 'MASTURBATING BOI!!! ;D'];
 var array2 = ["lol no do ur own dirty work u bi-", "i can't u dumb dumb", 'i hate helping people screw u!'];
 var array3 = ['WHAT? ~~I THOUGHT WE ALWAYS DID!~~ THAT IS WEIRD!', 'ok actually what the hell that is weird dude!', 'OH YES BOI ;)'];
 var array4 = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', ];
-var array5 = ['yep im postive', 'nope that is false', 'duh', 'ask me later im busy kidnapping kids', 'well yeah', 'no absoutley not', 'never!', 'i dont know to be honest'];
+var array5 = ['yep im postive', 'nope that is false', 'duh', 'well yeah', 'no absoutley not', 'never!', 'of course!', 'what the hell never?'];
 var array6 = ['*how the hell did u know thats a secret dont say that again!!!*', "are u a police men or somethin'?", 'and? its normal you dumb fu'];
 
 bot.on('ready', () =>{
@@ -49,6 +49,23 @@ bot.on('message', message=>{
             var result4 = Math.floor((Math.random() * array4.length))
             message.channel.send(array4[result4])
         break;
+            
+        case '8ball':
+            if(!args[1]){
+                message.channel.sendMessage('you didnt give me a question to answer nooba');
+                return;
+            }
+            var result5 = Math.floor((Math.random() * array5.length))
+
+            const embed = new Discord.RichEmbed()
+            .setTitle('8ball (8)')
+            .setField(message.author.username)
+            .setField('Q) ' + args[1])
+            .setField('A) ' + result5)
+            .setColor(2123412)	
+            MessageChannel.channel.sendEmbed(embed)
+        break;
+
             
         // INFO CASES
 
@@ -93,7 +110,7 @@ bot.on('message', message=>{
         // PERSONAL COMMANDS:
 
         case 'kick':
-            if(!message.member.roles.find(r => r.name === "mod")) return message.channel.sendMessage('you are not a mod lol')
+            if(!message.member.roles.find(r => r.name === "Mods")) return message.channel.sendMessage('you are not a mod lol')
 
             const user = message.mentions.users.first();
 
@@ -115,7 +132,7 @@ bot.on('message', message=>{
             }
         break; 
         case 'ban':
-            if(!message.member.roles.find(r => r.name === "mod")) return message.channel.sendMessage('you are not a mod lol')
+            if(!message.member.roles.find(r => r.name === "Mods")) return message.channel.sendMessage('you are not a mod lol')
 
             const user2 = message.mentions.users.first();
 
