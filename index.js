@@ -1,120 +1,288 @@
-const Discord = require('discord.js')
-const bot = new Discord.Client();
+const Discord = require('discord.js');
+const {Client, Attachment} = require('discord.js');
+const bot = new Client();
 
-var MESSAGE = 'GOD YES';
+var PREFIX = '>';
+var version = '1.0.0';
+const answer = 'Yes';
 
-const PREFIX = '?';
-
-var version = ('V1.42')
-
-var array1 = ['i like ||raping|| little kids! :)', 'i work all day keeping myself online, boring life', 'MASTURBATING BOI!!! ;D', 'work around the circuits and rape some other motherboards', 'fricc i dont do anything lelelel', 'well i defintly dont have threesomes like all the time UwU'];
-var array2 = ["lol no do ur own dirty work u bi-", "i can't u dumb dumb", 'i hate helping people screw u!'];
-var array3 = ['im pretty good at that', 'jeez i succ at that', 'i beat that like i beat my mom', 'fricc you i no good'];
-var array4 = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', ];
-var array5 = ['yep im postive', 'nope that is false', 'duh', 'well yeah', 'no absoutley not', 'never!', 'of course!', 'what the hell never?'];
-var array6 = ['*how the hell did u know thats a secret dont say that again!!!*', "are u a police men or somethin'?", 'and? its normal you dumb fu'];
+var MODROLE = 'Mods';
+var WELCOME = true;
+var NAME = 'welcoming-children'
 
 bot.on('ready', () =>{
-    console.log('this bot is online AND IM GOING TO RAPE U HARDDDDD');
-    bot.user.setActivity('?commands', { type: 'PLAYING'}).catch(console.error);
+    console.log('this bot is online');
+    bot.user.setActivity('>help', { type: 'PLAYING'}).catch(console.error);
 })
 
-bot.on('message', message=>{
+var EightBall = ['Yep', 'Nope', 'Of course!', 'Never!'];
+var MiniGame1 = ['You were unsuccesful, I couldnt sacrifice them for you, so take this peice offering: a cooked dinosour', 'Sorry but the police came and didnt let me sacrifce them for you, im not sorry you peice of sh%t what is wrong with you!', 'I sacrificed them for you, how do you feel? You just made me commit a murder!'];
+var MiniGame2 = ['Paper!', 'Rock!', 'Scissors!']
+var GoodAt = ['Ya know what? i aint bad at that!', 'omg im so good yeas mlg LOLOWD', 'the fricc i succ', 'FRICC IM GOOD AT THAT O0WQFIOWKF', 'THE HELL I SUCK AT THAT']
+
+bot.on('guildMemberAdd', member =>{
+    const image = new Attachment("https://castleberryfairs.com/wp-content/uploads/2014/05/welcome.png");
+    const channel = member.guild.channels.find(channel => channel.name === NAME);
+    if(!channel) return;
     
+    if(WELCOME === true){
+        channel.send(`Welcome to the server, ${member}`)
+        channel.send(channel.author, image)
+    }
+})
+
+bot.on('guildMemberRemove', member =>{
+    const image2 = new Attachment("https://3.bp.blogspot.com/-ng2rng7oSqI/WopEyH08-VI/AAAAAAAID5g/AN0JAyEjVtoMX5_RZojRxKXiypmTKjc3QCLcBGAs/s1600/goodbye_PNG24.png");
+    const channel = member.guild.channels.find(channel => channel.name === NAME);
+    if(!channel) return;
+
+    if(WELCOME === true){
+        channel.send(`${member} just left :(`)
+        channel.send(channel.author, image2)
+    }
+})
+
+bot.on('message', message =>{
+
     if(!message.content.startsWith(PREFIX)) return;
     let args = message.content.substring(PREFIX.length).split(" ");
-    
+
     switch(args[0]){
 
         // NORMAL COMMANDS
-
-        case 'whatYaLike':
-            var result1 = Math.floor((Math.random() * array1.length))
-            message.channel.send(array1[result1])
-        break;
-
-        case 'doMyHomework':
-            var result2 = Math.floor((Math.random() * array2.length))
-            message.channel.send(array2[result2])
-        break;
-
-        case 'goodAt':
-            if (!args[1]){
-                message.channel.sendMessage('good at what? oxygen?')
-                return;
-            }
-            var result3 = Math.floor((Math.random() * array3.length))
-            message.channel.send(array3[result3])
-        break;
-
-        case 'rule34':
-            message.channel.sendMessage('very horny ;) http://bit.ly/2HPQ1JW')
-        break;
-		
-        case 'spin-the-mis':
-            var result4 = Math.floor((Math.random() * array4.length))
-            message.channel.send(array4[result4])
-        break;
-	
-        // INFO CASES
-
         case 'info':
             if(args[1] === 'version'){
-                message.channel.sendMessage('timer (me) is at version ' + version);
+                message.channel.send('Bot is at version ' + version);
             }else{
-                if(args[1] === 'server'){
-                    message.channel.sendMessage('E.Gadds Labotory server is a place of freedom and memes where u can go onto the catogorys and do whatever u want in "legal restriction" of course! theres a shop, fun activites, kool events and a spaninglish voice channel!');
+                if(args[1] === 'author'){
+                    message.channel.send('Bot was made by TheOofverse, pretty kool memer');
                 }else{
-                    if(args[1] === 'bot'){
-                        message.channel.sendMessage('im Timer! a bot that theoofverse coded in visual studio and discord.js which is cool. i can do alot of different things that are pretty kool and while i could be used more, there aint much point!');
+                    if(args[1] === 'making'){
+                        message.channel.send('Bot was made in Visual Studio Code, and Node.js, and time...');
                     }else{
-                        if(args[1] === 'kids'){
-                            const embed = new Discord.RichEmbed()
-                           .setTitle("Kids I've slaughturd & raped")
-                           .addField('John Micheal', 'loser')
-                           .addField('Samantha Brandon', 'nerd')
-                           .addField('Humacufa Prologo', 'weird name')
-                           .addField('Juliet Rasberry', 'fairy tale copy')
-					       .addField('Timithy Young', 'he got bullied lol')
-                           .addField('Marco Alexander', 'hes russian')
-                           .addField('Kevin Brown', 'THAT SON OF A BI-')
-                           .addField(message.author.username, 'you are next')
-                           .setColor(10038562)					   
-                           message.channel.sendEmbed(embed);
-                        }else{
-                            message.channel.sendMessage('dude what kind of info do u want tell me now pls?')
+                        message.channel.send('Invalid Arguments, please try again')
                     }
                 }
             }
-        }
+        break;
+        
+
+        // FUN COMMANDS
+        case '8ball':
+            if(!args[1]){
+                message.reply('You need to put a question after `8ball`')
+                return;
+            }
+            var result2 = Math.floor((Math.random() * EightBall.length))
+            message.channel.send(EightBall[result2])
+        break;
+		case 'goodAt':
+		    if(!args[1]){
+				message.reply('good at what? put something after `' + PREFIX + 'goodAt`')
+				return;
+			}
+			var result5 = Math.floor((Math.random() * GoodAt.length))
+			message.channel.send(GoodAt[result5])
+		break;
+
+        // EMBED COMMANDS
+        case 'userInfo':
+            const embed = new Discord.RichEmbed()
+            .setTitle('User Info')
+            .addField('Username:', message.author.username)
+            .addField('Virgin?', answer)
+            .addField('Current Server:', message.guild.name)
+            .setThumbnail(message.author.avatarURL)
+            .setFooter('Bot made by TheOofverse')
+            .setColor(0x3743AD);
+            message.channel.send(embed);
         break;
 
-        // PRIVATE DMS
+        case 'help':
+            const embed2 = new Discord.RichEmbed()
+            .setTitle('Bot Commands')
+            .addField('sacrifice', 'Putting in `' + PREFIX + 'sacrifice` will do nothing because **you need to sacrifice something-** *Cough* what?')
+            .addField('8ball', 'Putting `' + PREFIX + '8ball` will do nothing because you need to ask a question E.G: `' + PREFIX + '8ball whats the point to life?`')
+            .addField('userInfo', 'Putting `' + PREFIX + 'userInfo` will make me respond with info about the user who messaged')
+            .addField('rps', 'Putting `' + PREFIX + 'rps` will challenge me to a game of rock paper scissors! Remember to put `rock, paper, or scissors` after `' + PREFIX + 'rps`')
+            .addField('goodAt', 'Putting in`' + PREFIX + 'goodAt` will do nothing cuz you need to put something AFTER `goodat` E.G: `' + PREFIX + 'goodAt child pornography`')
+			.addField('--------------------', '**OTHER**')
+            .addField('Info', "You put `" + PREFIX + 'info` before: `version, author, making`')
+            .addField('**For Mods:**', 'Put in `' + PREFIX + 'settings` for more Info')
+			.addField(PREFIX + 'kick [user]', 'kick the user!')
+			.addField(PREFIX + 'ban [user] [reason]', 'ban the user!')
+            .setFooter('Bot made by TheOofverse')
+            .setThumbnail("https://tse1.mm.bing.net/th?id=OIP.dTsN0qVxsv0v24T1bn9hpQHaHa&pid=Api")
+            .setColor(0x3743AD);
+            message.channel.send(embed2)
+        break;
 
-        case 'prisoner':
-            var result6 = Math.floor((Math.random() * array6.length))
-            message.author.send(array6[result6])
+        // MUTE/KICK/BAN COMMANDS
+        case 'kick':
+            if(!message.member.roles.find(r => r.name === MODROLE)) return message.channel.send('You are not a moderator')
+
+            const user = message.mentions.users.first();
+            if(user){
+                const member = message.guild.member(user);
+                if(member){
+                    member.kick('You have been kicked!').then(() =>{
+                        message.reply(`${user.tag} has been kicked succesfully!`)
+                    }).catch(err =>{
+                        message.reply('I was unable to kick the user')
+                        console.log(err);
+                    })
+                }else{
+                    message.reply("That user isn't in this server")
+                }
+            }else{
+                message.reply("You need to specify who to kick!")
+            } 
         break;   
 
-	case 'commands':
-            message.author.send('this will suite your needs i think:');
-            const embed = new Discord.RichEmbed()
-            .setTitle('Timer Commands')
-            .addField('whatYaLike', 'putting `?whatYaLike` will generate a random answer from Timer saying what he likes')
-            .addField('goodAt', 'putting `?goodAt` will do nothing cuz you need to add a question E.G: `?goodAt masturbation`')
-            .addField('doMyHomework', 'putting `?doMyHomework` will generate a random answer from Timer listing why he wont do your homework')
-            .addField('rule34', 'putting `?rule34` will... dear god no!')
-            .addField('prisoner', 'putting `?prisoner` will make Timer DM you with a *private message*')
-            .addField('~~~~~~~~~~~~', '**INFO GRAPHICS CARD**')
-            .addField('remember:', 'put `?info` before these commands')
-            .addField('version', 'tells the version of the bot')
-            .addField('bot', 'get info about the bot')
-            .addField('server', 'get info about the original server time was made in!')
-            .addField('kids', 'ask info about all the kids hes... is this sfw?')
-            .setFooter('remember the prefix for a command is ?')
-            .setColor(0xFE642E);
-            message.author.send(embed);
-        break;		    
+        case 'ban':
+            if(!message.member.roles.find(r => r.name === MODROLE)) return message.channel.send('You are not a moderator')
+
+            const user2 = message.mentions.users.first();
+            if(user2){
+                const member2 = message.guild.member(user2);
+                if(member2){
+                    member2.ban({reason: args[2]}).then(() =>{
+                        const channel = member2.guild.channels.find(channel => channel.name === "welcome");
+                        if(!channel) return;
+                        channel.send(`${user2.tag} has been banned from this server!`)
+                    })
+                }else{
+                    message.reply("That user isn't in this server")
+                }
+            }else{
+                message.reply("You need to specify who to ban!")
+            } 
+        break; 
+        
+        // SETTINGS
+        case 'settings':
+            if(!message.member.roles.find(r => r.name === MODROLE)) return message.channel.send('You are not a moderator')
+
+            if(args[1] === 'prefix'){
+                if(args[2]){
+                    PREFIX = args[2];
+                    message.channel.send('Changed Prefix to ' + args[2]);
+                }else{
+                    message.channel.send('Put something after prefix')
+                }
+            }else{
+                if(args[1] === 'commander'){
+                    if(args[2]){
+                        MODROLE = args[2];
+                        message.channel.send('Changed CommanderRole to ' + args[2]);
+                    }else{
+                        message.channel.send('What role should be commander? (dont @mention the role just type the name in)')
+                    }
+                }else{
+                    if(args[1] === 'welcome'){
+                        if(args[2]){
+                            if(args[2] === 'enable'){
+                                WELCOME = true;
+                                message.channel.send('Enabled Welcoming and Goodbying')
+                            }else{
+                                if(args[2] === 'disable'){
+                                    WELCOME = false;
+                                    message.channel.send('Disabled Welcoming and Goodbying')
+                                }else{
+                                    if(args[2] === 'name'){
+                                        if(args[3]){
+                                            NAME = args[3]
+                                            message.channel.send('Changed channel I will welcome in to ' + args[3])
+                                        }else{
+                                            message.channel.send('what channel? type in the name of the channel (do not @mention it)')
+                                        }
+                                    }else{
+                                        message.channel.send('Invalid Arguments')
+                                    }
+                                }
+                            }
+                        }else{
+                            message.channel.send('should i enable welcoming or disable it?')
+                        }
+                    }else{
+                        const embed3 = new Discord.RichEmbed()
+                        .setTitle('Settings')
+                        .addField('Remember:', '`' + PREFIX + 'settings` goes before all')
+                        .addField('prefix', 'putting `prefix` after will do nothing because you need to add what you want to change it to E.G: `' + PREFIX + 'settings prefix !`')
+                        .addField('commander', 'putting `commander` after will do nothing cuz you need to type in the name of whatever role you want to be commander of the Bot')
+                        .addField('welcome', 'putting `welcome` after will do nothing cuz you need to either enable or disable it E.G: `' + PREFIX + 'settings welcome disable`, you can also type in `name` and then the name of the channel you want me to welcome in')
+                        .setFooter('Bot made by TheOofverse')
+                        .setThumbnail("https://image.freepik.com/free-icon/gear-rotation_318-56336.jpg")
+                        .setColor(0x3743AD);
+                        message.channel.send(embed3)
+                    }
+                }
+            }
+        break;
+
+        // MINI-GAMES
+        case 'sacrifice':
+            if(!args[1]){
+                message.reply('Who do you want to sacrifice? Mention someone with @')
+                return;
+            }
+            message.channel.send('Sacrificing ' + args[1] + ' and...')
+            var result3 = Math.floor((Math.random() * MiniGame1.length))
+            message.channel.send(MiniGame1[result3])
+            message.channel.send('Also you suck')
+        break;
+
+        case 'rps':
+            if(!args[1]){
+                message.reply('Remember to put either `rock`, `paper` or `scissors`')
+                return;
+            }
+            if(args[1] === 'rock'){
+                var result4 = Math.floor((Math.random() * MiniGame2.length))
+                message.channel.send(MiniGame2[result4])
+                if(result4 === 0){
+                    message.channel.send("Lol I beat you, you truly suck!")
+                }
+                if(result4 === 1){
+                    message.channel.send("Let's do a rematch")
+                }
+                if(result4 === 2){
+                    message.channel.send("FRICC WTH FIEWJIFEW")
+                }
+            }else{
+                if(args[1] === 'paper'){
+                    var result4 = Math.floor((Math.random() * MiniGame2.length))
+                    message.channel.send(MiniGame2[result4])
+                    if(result4 === 0){
+                        message.channel.send("Let's do a rematch")
+                    }
+                    if(result4 === 1){
+                        message.channel.send("FRICC WTH FIEWJIFEW")
+                    }
+                    if(result4 === 2){
+                        message.channel.send("Lol I beat you, you truly suck!")
+                    }
+                }else{
+                    if(args[1] === 'scissors'){
+                        var result4 = Math.floor((Math.random() * MiniGame2.length))
+                        message.channel.send(MiniGame2[result4])
+                        if(result4 === 0){
+                            message.channel.send("FRICC WTH FIEWJIFEW")
+                        }
+                        if(result4 === 1){
+                            message.channel.send("Lol I beat you, you truly suck!")
+                        }
+                        if(result4 === 2){
+                            message.channel.send("Let's do a rematch")
+                        }
+                    }else{
+                        message.reply('thats not valid')
+                    }
+                }
+            }
+
+            // XP SYSTEM
+            
     }
 })
 
